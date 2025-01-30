@@ -37,6 +37,10 @@ function listarAmigos() {
 
 // Função para sortear amigo
 function sortearAmigo() {
+  if (arrayAmigos.length == 0) {
+    alert("Você precisa adicionar amigos antes de realizar o sorteio");
+    return;
+  }
   resultado.innerHTML = `<li>${arrayAmigos[gerarIndexAleatorio()]}</li>`;
 }
 
