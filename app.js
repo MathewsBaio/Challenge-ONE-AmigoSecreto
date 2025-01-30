@@ -6,3 +6,25 @@ let listaAmigosFront = document.getElementById("resultado");
 
 // Array
 let arrayAmigos = [];
+
+// Função para adicionar amigo
+function adicionarAmigo() {
+  if (texto.value == "") {
+    alert("Por favor, insira um nome");
+    return;
+  }
+
+  if (temNum(texto.value)) {
+    alert("O nome não pode conter números");
+    return;
+  }
+
+  arrayAmigos.push(texto.value);
+  console.log(arrayAmigos);
+  texto.value = "";
+}
+
+// Funções Auxiliares
+function temNum(txt) {
+  return txt.split("").some((x) => !isNaN(x) && x !== " ");
+}
