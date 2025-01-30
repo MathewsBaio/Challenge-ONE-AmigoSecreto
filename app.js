@@ -20,8 +20,18 @@ function adicionarAmigo() {
   }
 
   arrayAmigos.push(texto.value);
-  console.log(arrayAmigos);
+  listarAmigos();
   texto.value = "";
+}
+
+// Função para exibir amigos
+function listarAmigos() {
+  listaAmigosFront.innerHTML = "";
+  let txt = "";
+  for (let i = 0; i < arrayAmigos.length; i++) {
+    txt += `<li>${arrayAmigos[i]}</li>`;
+  }
+  listaAmigosFront.innerHTML = txt;
 }
 
 // Funções Auxiliares
