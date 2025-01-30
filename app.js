@@ -35,7 +35,17 @@ function listarAmigos() {
   listaAmigosFront.innerHTML = txt;
 }
 
+// Função para sortear amigo
+function sortearAmigo() {
+  resultado.innerHTML = `<li>${arrayAmigos[gerarIndexAleatorio()]}</li>`;
+}
+
 // Funções Auxiliares
 function temNum(txt) {
   return txt.split("").some((x) => !isNaN(x) && x !== " ");
+}
+
+function gerarIndexAleatorio() {
+  let index = Math.floor(Math.random() * arrayAmigos.length);
+  return index;
 }
